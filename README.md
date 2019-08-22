@@ -9,11 +9,11 @@ private static SecurityKey GetSecurityKey(string filePath)
 }
 
 var accountOptions = new AccountOptions(
-						"ORGANIZATION_ID",
-						"TECHNICAL_ACCOUNT_ID",
-						"CLIENT_ID",
-						"CLIENT_SECRET",
-						GetSecurityKey("CERTIFICATE_PATH"));
+			"ORGANIZATION_ID",
+			"TECHNICAL_ACCOUNT_ID",
+			"CLIENT_ID",
+			"CLIENT_SECRET",
+			GetSecurityKey("CERTIFICATE_PATH"));
 
 var reactorApi = new ReactorApi(accountOptions);
 
