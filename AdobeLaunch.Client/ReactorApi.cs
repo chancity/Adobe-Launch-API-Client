@@ -27,5 +27,6 @@ namespace AdobeLaunch.Client
         }
 
         public IReactorClient Client => _reactorClient.Client;
+        public HttpClient HttpClient => _reactorClient.HttpClient;
     }
 }

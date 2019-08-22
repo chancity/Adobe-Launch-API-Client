@@ -32,6 +32,7 @@ namespace AdobeLaunch.Client.Extensions
             httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "application/vnd.api+json;revision=1");
             httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Gw-Ims-Org-Id", accountOptions.OrganizationId);
             httpClient.DefaultRequestHeaders.TryAddWithoutValidation("X-Api-Key", accountOptions.ClientId);
+            httpClient.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/vnd.api+json");
             httpClient.FixAcceptHeader();
         }
     }

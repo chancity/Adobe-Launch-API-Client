@@ -14,6 +14,7 @@ namespace AdobeLaunch.Client.Internals
     internal class ReactorClient
     {
         internal IReactorClient Client { get; }
+        internal HttpClient HttpClient { get; }
 
         public ReactorClient(AccountOptions accountOptions, ITokenHandler<AccessToken> accessTokenHandler, HttpMessageHandler innerHandler)
         {
@@ -28,10 +29,10 @@ namespace AdobeLaunch.Client.Internals
 
 
             Client = RestService.For<IReactorClient>(httpClient);
+            HttpClient = httpClient;
         }
     }
 
-    [Headers("Content-Type: application/vnd.api+json")]
     public interface IReactorClient
     {
         #region Relationships Catch All
