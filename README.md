@@ -1,6 +1,6 @@
 # Adobe-Launch-API-Client
 
-```private static SecurityKey GetSecurityKey(string filePath)
+`private static SecurityKey GetSecurityKey(string filePath)
 {
 	var certificate = new X509Certificate2(X509Certificate.CreateFromSignedFile(filePath));
 	var rsaPrivateKey = certificate.GetRSAPrivateKey();
@@ -16,4 +16,4 @@ var accountOptions = new AccountOptions(
 
 var reactorApi = new ReactorApi(accountOptions);
 
-await _reactorApi.Client.Companies().ConfigureAwait(false);```
+await _reactorApi.Client.Companies().ConfigureAwait(false);`
