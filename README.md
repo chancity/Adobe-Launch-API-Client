@@ -19,3 +19,7 @@ var reactorApi = new ReactorApi(accountOptions);
 
 await _reactorApi.Client.Companies().ConfigureAwait(false);
 ```
+
+## Available methods 
+
+https://github.com/chancity/Adobe-Launch-API-Client/blob/master/AdobeLaunch.Client/Internals/ReactorClient.cs#L35-L283
