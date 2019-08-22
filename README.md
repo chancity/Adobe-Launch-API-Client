@@ -1,4 +1,4 @@
-# Adobe-Launch-API-Client
+# Adobe Launch API Client
 
 ```
 private static SecurityKey GetSecurityKey(string filePath)
