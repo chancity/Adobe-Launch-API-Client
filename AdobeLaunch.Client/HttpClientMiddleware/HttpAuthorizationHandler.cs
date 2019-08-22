@@ -20,8 +20,14 @@ namespace AdobeLaunch.Client.HttpClientMiddleware
         {
             var accessToken = await _accessTokenHandler.GetToken().ConfigureAwait(false);
             request.Headers.Add("Authorization", accessToken.Token);
+            HttpResponseMessage response = await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
 
-            return await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
+            if (response.IsSuccessStatusCode)
+            {
+               await _accessTokenHandler.SetToken(accessToken).ConfigureAwait(false);
+            }
+
+            return response;
         }
     }
 }
