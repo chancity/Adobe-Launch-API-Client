@@ -19,6 +19,10 @@ var reactorApi = new ReactorApi(accountOptions);
 
 await _reactorApi.Client.Companies().ConfigureAwait(false);
 ```
+## Creating a certificate
+
+openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout adobe_launch_console.key -out adobe_launch_console.crt
+openssl pkcs12 -in adobe_launch_console.crt -inkey adobe_launch_console.key -export -out adobe_launch_console.pfx
 
 ## Available methods 
 
