@@ -9,18 +9,15 @@ namespace AdobeReactorBase
         public IReactorClient Client { get; }
         public HttpClient HttpClient { get; }
 
-        public ReactorClient(string url, string organizationId, string clientId, HttpMessageHandler innerHandler)
+        public ReactorClient(HttpClient httpClient, string organizationId, string clientId)
         {
-            HttpClient httpClient = new HttpClient(innerHandler)
-            {
-                BaseAddress = new Uri(url),
-            };
-
             httpClient.SetDefaultRequestHeaders(organizationId, clientId);
-
 
             Client = RestService.For<IReactorClient>(httpClient);
             HttpClient = httpClient;
         }
+
+        public ReactorClient(string url, string organizationId, string clientId, HttpMessageHandler innerHandler) :
+            this(new HttpClient(innerHandler) {BaseAddress = new Uri(url)}, organizationId, clientId) { }
     }
 }

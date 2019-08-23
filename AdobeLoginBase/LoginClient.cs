@@ -8,16 +8,14 @@ namespace AdobeLoginBase
     public class LoginClient
     {
         private readonly ILoginClient _client;
-
-        public LoginClient(string url, HttpMessageHandler innerHandler)
+        public LoginClient(HttpClient httpClient)
         {
-            HttpClient httpClient = new HttpClient(innerHandler)
-            {
-                BaseAddress = new Uri(url)
-            };
-
             _client = RestService.For<ILoginClient>(httpClient);
         }
+
+        public LoginClient(string url, HttpMessageHandler innerHandler)
+            : this(new HttpClient(innerHandler) { BaseAddress = new Uri(url)})
+        {}
 
         public Task<AccessToken> Login(string clientId, string clientSecret, string jwtToken)
         {
