@@ -261,3 +261,7 @@ __pycache__/
 *.pyc
 /AdobeLaunch.ConsoleApp/Properties
 /AdobeLaunch.ApiProxy/Properties
+/Backend/Properties
+/ExampleApp/Properties
+/Frontend/logs
+/Frontend/Properties

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>AdobeReactorBase</RootNamespace>
+    <AssemblyName>AdobeReactorBase</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NJsonSchema" Version="9.13.28" />
+    <PackageReference Include="Refit" Version="4.7.51" />
+  </ItemGroup>
+
+</Project>
