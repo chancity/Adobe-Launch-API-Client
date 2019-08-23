@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Net;
+using System.Net.Http;
 using System.Security.Cryptography.X509Certificates;
 using AdobeLaunch.ApiProxy.Services;
 using AdobeLaunch.Client;
@@ -47,6 +49,12 @@ namespace AdobeLaunch.ApiProxy
                 GetSecurityKey(Configuration[Defaults.CERTIFICATE_PATH]));
 
             var reactorApi = new ReactorApi(accountOptions);
+            //    
+            //    , null, new HttpClientHandler()
+            //{
+            //    Proxy = new WebProxy("http://localhost:8888"),
+            //    AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate | DecompressionMethods.None
+            //});
 
 
             services

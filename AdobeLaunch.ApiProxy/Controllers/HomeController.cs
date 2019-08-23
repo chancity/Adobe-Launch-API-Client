@@ -18,7 +18,7 @@ namespace AdobeLaunch.ApiProxy.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return Json("yo yo");
+            return View();
         }
     }
 }
