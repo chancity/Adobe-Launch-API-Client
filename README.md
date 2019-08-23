@@ -1,4 +1,4 @@
-# Adobe Launch API Client
+# Adobe Reactor Api C#
 
 ```
 private static SecurityKey GetSecurityKey(string filePath)
