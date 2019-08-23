@@ -28,4 +28,4 @@ openssl pkcs12 -in adobe_launch_console.crt -inkey adobe_launch_console.key -exp
 ```
 ## Available methods 
 
-https://github.com/chancity/Adobe-Launch-API-Client/blob/master/AdobeLaunch.Client/Internals/ReactorClient.cs#L35-L283
+https://github.com/chancity/Adobe-ReactorApi-CSharp/blob/master/AdobeReactorBase/IReactorClient.cs
