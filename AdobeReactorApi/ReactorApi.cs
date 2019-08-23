@@ -6,7 +6,6 @@ using AdobeJwt;
 using AdobeLoginBase;
 using AdobeReactorApi.Events;
 using AdobeReactorApi.Extensions;
-using AdobeReactorApi.Helpers;
 using AdobeReactorApi.HttpClientHandlers;
 using AdobeReactorBase;
 using Microsoft.IdentityModel.Tokens;
@@ -32,23 +31,36 @@ namespace AdobeReactorApi
 
         public ReactorApi(AccountOptions accountOptions, AccessToken token, HttpClientHandler httpClientHandler = null) : this(accountOptions)
         {
+            httpClientHandler = GetHttpClientHandler(httpClientHandler);
+            SetReactorClient(new ExceptionHandler(httpClientHandler));
             Token = token;
-            SetReactorClient(httpClientHandler.GetExceptionHandler());
         }
 
         public ReactorApi(AccountOptions accountOptions, SecurityKey securityKey, TimeSpan? jwtExpiresIn = null, HttpClientHandler httpClientHandler = null) : this(accountOptions)
         {
             var expiresIn = jwtExpiresIn ?? TimeSpan.FromDays(1);
             _jwtProvider = new JwtProvider(accountOptions.ToJwtPayloadOptions(expiresIn), securityKey);
-            var exceptionHandler = httpClientHandler.GetExceptionHandler();
-            _loginClient = new LoginClient(Constants.AdobeLoginUrl, exceptionHandler);
-            SetReactorClient(new AuthorizationHandler(AccessTokenGetter, exceptionHandler));
+
+            httpClientHandler = GetHttpClientHandler(httpClientHandler);
+
+            _loginClient = new LoginClient(Constants.AdobeLoginUrl, new ExceptionHandler(httpClientHandler));
+
+            var authorizationHandler = new AuthorizationHandler(AccessTokenGetter, httpClientHandler);
+
+            SetReactorClient(new ExceptionHandler(authorizationHandler));
         }
 
+        private static HttpClientHandler GetHttpClientHandler(HttpClientHandler httpClientHandler)
+        {
+            return httpClientHandler ?? new HttpClientHandler
+            {
+                AutomaticDecompression =
+                    DecompressionMethods.GZip | DecompressionMethods.Deflate | DecompressionMethods.None
+            };
+        }
         private void SetReactorClient(HttpMessageHandler httpMessageHandler)
         {
-            _reactorClient = new ReactorClient(Constants.ReactorUrl, _accountOptions.OrganizationId, _accountOptions.ClientId,
-                httpMessageHandler);
+            _reactorClient = new ReactorClient(Constants.ReactorUrl, _accountOptions.OrganizationId, _accountOptions.ClientId, httpMessageHandler);
         }
 
         private async Task<AccessToken> AccessTokenGetter()

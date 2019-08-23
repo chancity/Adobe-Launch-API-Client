@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
@@ -22,11 +23,9 @@ namespace AdobeReactorApi.HttpClientHandlers
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-
             try
             {
                 HttpResponseMessage response = await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
-
                 if (!response.IsSuccessStatusCode)
                 {
                     string responseMessage = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
