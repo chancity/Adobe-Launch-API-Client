@@ -1,5 +1,7 @@
 # Adobe Reactor Api C#
 
+Nuget: https://www.nuget.org/packages/AdobeReactorApi
+
 ```
 private static SecurityKey GetSecurityKey(string filePath)
 {
