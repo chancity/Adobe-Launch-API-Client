@@ -1,4 +1,4 @@
-﻿namespace AdobeLaunch.FrontEnd.Models
+﻿namespace FrontEnd.Models
 {
     /// <summary>
     /// Represents public session of the web application

@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
 
-namespace AdobeLaunch.FrontEnd
+namespace FrontEnd
 {
     public class Program
     {

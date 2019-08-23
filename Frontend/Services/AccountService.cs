@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using AdobeLaunch.FrontEnd.Infrastructure;
-using AdobeLaunch.FrontEnd.Models;
+using FrontEnd.Infrastructure;
+using FrontEnd.Models;
 
-namespace AdobeLaunch.FrontEnd.Services
+namespace FrontEnd.Services
 {
     public class AccountService : ServiceBase
     {

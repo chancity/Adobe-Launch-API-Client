@@ -1,4 +1,4 @@
-﻿namespace AdobeLaunch.FrontEnd.Models
+﻿namespace FrontEnd.Models
 {
     public class PersonModel
     {

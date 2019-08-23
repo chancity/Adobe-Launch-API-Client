@@ -1,4 +1,4 @@
-﻿namespace AdobeLaunch.FrontEnd.Models
+﻿namespace FrontEnd.Models
 {
     /// <summary>
     /// Represents the isomorphic session for web application.

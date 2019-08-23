@@ -2,7 +2,7 @@
 using System.Linq;
 using Newtonsoft.Json;
 
-namespace AdobeLaunch.FrontEnd.Infrastructure
+namespace FrontEnd.Infrastructure
 {
     public class Result
     {

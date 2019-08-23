@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.ExceptionServices;
 
-namespace AdobeLaunch.FrontEnd.Infrastructure
+namespace FrontEnd.Infrastructure
 {
     public abstract class ServiceBase
     {

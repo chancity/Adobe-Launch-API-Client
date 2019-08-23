@@ -9,11 +9,11 @@ using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using AdobeLaunch.FrontEnd.Infrastructure;
-using AdobeLaunch.FrontEnd.Services;
+using FrontEnd.Infrastructure;
+using FrontEnd.Services;
 using Serilog;
 
-namespace AdobeLaunch.FrontEnd
+namespace FrontEnd
 {
     public class Startup
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AdobeLaunch.FrontEnd.Infrastructure;
-using AdobeLaunch.FrontEnd.Models;
+using FrontEnd.Infrastructure;
+using FrontEnd.Models;
 
-namespace AdobeLaunch.FrontEnd.Services
+namespace FrontEnd.Services
 {
     public class PersonService : ServiceBase
     {

@@ -1,9 +1,9 @@
 using System.Diagnostics;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using AdobeLaunch.FrontEnd.Models;
+using FrontEnd.Models;
 
-namespace AdobeLaunch.FrontEnd.Controllers
+namespace FrontEnd.Controllers
 {
     public class MainController : ControllerBase
     {

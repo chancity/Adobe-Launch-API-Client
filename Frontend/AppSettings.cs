@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AdobeLaunch.FrontEnd
+namespace FrontEnd
 {
     public class AppSettings
     {

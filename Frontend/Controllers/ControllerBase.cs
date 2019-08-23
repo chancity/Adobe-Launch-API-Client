@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json;
-using AdobeLaunch.FrontEnd.Models;
+using FrontEnd.Models;
 
-namespace AdobeLaunch.FrontEnd.Controllers
+namespace FrontEnd.Controllers
 {
     public class ControllerBase : Controller
     {

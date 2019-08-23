@@ -1,9 +1,9 @@
-﻿using System;
+﻿using FrontEnd.Models;
+using FrontEnd.Services;
 using Microsoft.AspNetCore.Mvc;
-using AdobeLaunch.FrontEnd.Models;
-using AdobeLaunch.FrontEnd.Services;
+using ControllerBase = FrontEnd.Controllers.ControllerBase;
 
-namespace AdobeLaunch.FrontEnd.Controllers
+namespace FrontEnd.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

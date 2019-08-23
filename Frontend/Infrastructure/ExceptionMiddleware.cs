@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Serilog;
 
-namespace AdobeLaunch.FrontEnd.Infrastructure
+namespace FrontEnd.Infrastructure
 {
     public class ExceptionMiddleware
     {

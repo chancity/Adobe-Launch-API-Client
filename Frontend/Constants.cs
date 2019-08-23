@@ -1,4 +1,4 @@
-﻿namespace AdobeLaunch.FrontEnd
+﻿namespace FrontEnd
 {
     public static class Constants
     {
