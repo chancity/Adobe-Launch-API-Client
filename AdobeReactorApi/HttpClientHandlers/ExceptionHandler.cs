@@ -13,11 +13,11 @@ namespace AdobeReactorApi.HttpClientHandlers
 {
     public class ExceptionHandler : DelegatingHandler
     {
-        private readonly JsonSchema4 _schema;
+        private readonly JsonSchema _schema;
 
         public ExceptionHandler(HttpMessageHandler innerHandler)
         {
-            _schema = JsonSchema4.FromTypeAsync<ErrorResponse>().Result;
+            _schema = JsonSchema.FromType<ErrorResponse>();
             InnerHandler = innerHandler;
         }
 

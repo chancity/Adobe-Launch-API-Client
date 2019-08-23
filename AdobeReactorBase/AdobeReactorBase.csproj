@@ -5,13 +5,12 @@
     <RootNamespace>AdobeReactorBase</RootNamespace>
     <AssemblyName>AdobeReactorBase</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.2</Version>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
+    <Version>1.0.3</Version>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NJsonSchema" Version="9.13.28" />
     <PackageReference Include="Refit" Version="4.7.51" />
   </ItemGroup>
 
