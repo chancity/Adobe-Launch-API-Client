@@ -12,10 +12,10 @@ var accountOptions = new AccountOptions(
 			"ORGANIZATION_ID",
 			"TECHNICAL_ACCOUNT_ID",
 			"CLIENT_ID",
-			"CLIENT_SECRET",
-			GetSecurityKey("CERTIFICATE_PATH"));
+			"CLIENT_SECRET");
 
-var reactorApi = new ReactorApi(accountOptions);
+var securityKey = GetSecurityKey("CERTIFICATE_PATH");
+var reactorApi = new ReactorApi(accountOptions, securityKey);
 
 await _reactorApi.Client.Companies().ConfigureAwait(false);
 ```
